@@ -1,0 +1,28 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="20dp"
+    android:height="20dp"
+    android:viewportWidth="30"
+    android:viewportHeight="30">
+
+    <group
+        android:scaleX="0.5"
+        android:scaleY="0.5"
+        android:translateX="7.5"
+        android:translateY="7.5">
+
+        <!-- Top Bar -->
+        <path
+            android:fillColor="#FFFFFFFF"
+            android:pathData="M6,5h18a1,1 0 0 1 1,1v2a1,1 0 0 1 -1,1H6a1,1 0 0 1 -1,-1V6a1,1 0 0 1 1,-1z" />
+
+        <!-- Middle Bar -->
+        <path
+            android:fillColor="#FFFFFFFF"
+            android:pathData="M6,13h18a1,1 0 0 1 1,1v2a1,1 0 0 1 -1,1H6a1,1 0 0 1 -1,-1v-2a1,1 0 0 1 1,-1z" />
+
+        <!-- Bottom Bar (shorter and left-aligned) -->
+        <path
+            android:fillColor="#FFFFFFFF"
+            android:pathData="M6,21h12a1,1 0 0 1 1,1v2a1,1 0 0 1 -1,1H6a1,1 0 0 1 -1,-1v-2a1,1 0 0 1 1,-1z" />
+    </group>
+</vector>
