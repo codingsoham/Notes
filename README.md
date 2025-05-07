@@ -2,6 +2,8 @@
 
 A beautifully designed Notes app built with **Kotlin** and **Jetpack Compose**, meticulously crafted to be an exact **UI clone of Google Keep**. This project demonstrates modern Android development practices including **MVVM architecture**, **Firebase integration**, and **Material You dynamic theming**.
 
+> 📱 The app features a **responsive UI** and includes **basic functionality for larger screens**, making it suitable for tablets and foldables.
+
 ## 🚀 Features
 
 - 🔐 **Firebase Authentication**  
@@ -28,6 +30,9 @@ A beautifully designed Notes app built with **Kotlin** and **Jetpack Compose**, 
 - 🧱 **MVVM Architecture**  
   Clean and maintainable architecture separating concerns effectively.
 
+- 🖥️ **Responsive UI**  
+  Optimized layouts for different screen sizes, including tablets and foldables.
+
 ## 📱 Tech Stack
 
 - **Kotlin**
@@ -44,6 +49,7 @@ A beautifully designed Notes app built with **Kotlin** and **Jetpack Compose**, 
 - `pages/` – UI screens and composables.
 - `ui.theme/` – Theming and design system setup.
 - `NotesViewModel.kt` – Core logic and state management.
+- `AuthViewModel.kt` – Authentication logic and state management.
 - `MainActivity.kt` – Application entry point.
 
 ## 🛠️ Setup
