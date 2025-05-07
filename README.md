@@ -68,4 +68,4 @@ Contributions are welcome! Feel free to fork the repo and submit a pull request.
 ## 📄 License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-UI inspired by Google Keep. This project is built for educational purposes.
+>UI inspired by Google Keep. This project is built for educational purposes.
