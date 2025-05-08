@@ -62,6 +62,21 @@ A beautifully designed Notes app built with **Kotlin** and **Jetpack Compose**, 
 3. Connect your Firebase project and add the google-services.json file to the app/ directory.
 4. Build and run the app on your device or emulator.
 
+## 📸 Screenshots
+| Page                            | Screenshot                                   |
+|---------------------------------|----------------------------------------------|
+| Get Started                     | ![Get Started](screenshots/get_started.png)  |
+| Sign In / Sign Up / Forgot Pass | ![Auth Screens](screenshots/auth.png)        |
+| Home Page                       | ![Home Page](screenshots/home.png)           |
+| Search Page                     | ![Search Page](screenshots/search.png)       |
+| Navigation Drawer               | ![Drawer](screenshots/drawer.png)            |
+| Profile View                    | ![Profile View](screenshots/profile.png)     |
+| Create / Notes View             | ![Create View](screenshots/create_note.png)  |
+| Trash                           | ![Trash](screenshots/trash.png)              |
+| Archive                         | ![Archive](screenshots/archive.png)          |
+| Selection View                  | ![Selection View](screenshots/selection.png) |
+
+
 ## 🤝 Contributions
 Contributions are welcome! Feel free to fork the repo and submit a pull request.
 
