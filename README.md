@@ -62,6 +62,10 @@ A beautifully designed Notes app built with **Kotlin** and **Jetpack Compose**, 
 3. Connect your Firebase project and add the google-services.json file to the app/ directory.
 4. Build and run the app on your device or emulator.
 
+## 📦 Download APK
+You can download the latest APK from the [Releases](https://github.com/your-username/notes/releases/latest) section.
+>Make sure to allow installations from unknown sources on your device.
+
 ## 📸 Screenshots
 | Page                            | Screenshot                                   |
 |---------------------------------|----------------------------------------------|
