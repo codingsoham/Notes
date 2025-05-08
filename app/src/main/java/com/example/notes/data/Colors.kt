@@ -1,10 +1,27 @@
 package com.example.notes.data
 
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
+import androidx.compose.foundation.isSystemInDarkTheme
 
+object colors {
 
-object colors{
-    var noteColors=listOf<Color>(
+    private val lightColors = listOf(
+        Color.Transparent,
+        Color(0xFFFFCDD2), // soft red
+        Color(0xFFFFAB91), // peach
+        Color(0xFFFFFFB3), // light yellow
+        Color(0xFFB3E5FC), // sky blue
+        Color(0xFFDCEDF9), // pale blue
+        Color(0xFFB2DFDB), // mint green
+        Color(0xFFDCEDC8), // soft green
+        Color(0xFFD1C4E9), // soft purple
+        Color(0xFFF8E1E1), // light pink
+        Color(0xFFEDE7D1), // beige
+        Color(0xFFF5F5F5)  // off-white
+    )
+
+    private val darkColors = listOf(
         Color.Transparent,
         Color(0xFF77172E),
         Color(0xFF692B17),
@@ -16,38 +33,20 @@ object colors{
         Color(0xFF472e5b),
         Color(0xFF6c394f),
         Color(0xFF4b443a),
-        Color(0xFF232427),
+        Color(0xFF232427)
     )
-    fun getColor(color: Int): Color {
-        return when (color) {
-            0 -> Color.Transparent
-            1 -> Color(0xFF77172E)
-            2 -> Color(0xFF692B17)
-            3 -> Color(0xFF7C4A03)
-            4 -> Color(0xFF264D3B)
-            5 -> Color(0xFF0C625D)
-            6 -> Color(0xFF256377)
-            7 -> Color(0xFF284255)
-            8 -> Color(0xFF472e5b)
-            9 -> Color(0xFF6c394f)
-            10 -> Color(0xFF4b443a)
-            else -> Color(0xFF232427)
-        }
+
+    fun noteColors(darkTheme: Boolean): List<Color> {
+        return if (darkTheme) darkColors else lightColors
     }
-    fun setColor(color: Color): Int{
-       return when (color) {
-            Color.Transparent -> 0
-            Color(0xFF77172E) -> 1
-            Color(0xFF692B17) -> 2
-            Color(0xFF7C4A03) -> 3
-            Color(0xFF264D3B) -> 4
-            Color(0xFF0C625D) -> 5
-            Color(0xFF256377) -> 6
-            Color(0xFF284255) -> 7
-            Color(0xFF472e5b) -> 8
-            Color(0xFF6c394f) -> 9
-            Color(0xFF4b443a) -> 10
-            else -> 11
-        }
+
+    fun getColor(index: Int, darkTheme: Boolean): Color {
+        return if (darkTheme) darkColors.getOrElse(index) { darkColors.last() }
+        else lightColors.getOrElse(index) { lightColors.last() }
+    }
+
+    fun setColor(color: Color, darkTheme: Boolean): Int {
+        val palette = if (darkTheme) darkColors else lightColors
+        return palette.indexOfFirst { it == color }.takeIf { it != -1 } ?: 0
     }
 }

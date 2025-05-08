@@ -3,6 +3,7 @@ package com.example.notes
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.combinedClickable
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.heightIn
@@ -39,7 +40,7 @@ fun DisplayNote(
     
     isAnySelected: Boolean=false
 ) {
-    val currentColor=colors.getColor(note.color)
+    val currentColor=colors.getColor(note.color,isSystemInDarkTheme())
     Card(
         modifier = Modifier.heightIn(min=55.dp)
             .padding(top = 5.dp, start = 5.dp)

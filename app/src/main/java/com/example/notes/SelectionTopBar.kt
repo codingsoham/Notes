@@ -1,5 +1,6 @@
 package com.example.notes
 
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -152,7 +153,7 @@ fun colorDialog(onDismissRequest:()->Unit={},currentColor: Color=Color.Unspecifi
                             Row(horizontalArrangement = Arrangement.SpaceBetween) {
                                 for (j in i..i + 3) {
                                     CircleColor(
-                                        color = colors.getColor(j),
+                                        color = colors.getColor(j, isSystemInDarkTheme()),
                                         currentColor = currentColor,
                                         onClick = {
                                             onDismissRequest()

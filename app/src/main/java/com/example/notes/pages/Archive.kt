@@ -2,6 +2,7 @@ package com.example.notes.pages
 
 import android.util.Log
 import androidx.activity.compose.BackHandler
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -173,7 +174,7 @@ fun ArchiveScreen(
         }
         val currentColor = if (selectedNotes.isNotEmpty() &&
             selectedNotes.all { selectedNotes.first().color == it.color }) {
-            colors.getColor(selectedNotes.first().color)
+            colors.getColor(selectedNotes.first().color, isSystemInDarkTheme())
         } else {
             Color.Unspecified
         }

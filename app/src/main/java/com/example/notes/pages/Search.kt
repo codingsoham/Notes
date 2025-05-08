@@ -2,6 +2,7 @@ package com.example.notes.pages
 
 import android.util.Log
 import androidx.activity.compose.BackHandler
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -197,7 +198,7 @@ fun SearchNotes(onClickNote: (Note) -> Unit,onBackClick: () -> Unit,notesViewMod
         }
         val currentColor = if (selectedNotes.isNotEmpty() &&
             selectedNotes.all { selectedNotes.first().color == it.color }) {
-            colors.getColor(selectedNotes.first().color)
+            colors.getColor(selectedNotes.first().color, isSystemInDarkTheme())
         } else {
             Color.Unspecified
         }

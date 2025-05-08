@@ -5,6 +5,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -92,7 +93,7 @@ fun NotesView(
 
     val colorSheetState = rememberModalBottomSheetState()
     var showColorSheet by rememberSaveable { mutableStateOf(false) }
-    val currentColor= colors.getColor(noteUiState.color)
+    val currentColor= colors.getColor(noteUiState.color, darkTheme = isSystemInDarkTheme())
 
     val scrollState = rememberScrollState()
 
@@ -239,6 +240,7 @@ fun NotesView(
                 dragHandle = null,
                 containerColor = if(currentColor==Color.Transparent) MaterialTheme.colorScheme.surfaceContainer else currentColor
             ) {
+                var darkTheme=isSystemInDarkTheme()
                 Column(modifier=Modifier.fillMaxWidth().padding(vertical = 20.dp)){
                     Text(
                         text="Color",
@@ -246,9 +248,9 @@ fun NotesView(
                         modifier= Modifier.padding(start = 20.dp)
                     )
                     LazyRow(modifier= Modifier.fillMaxWidth().padding(top=10.dp)){
-                        items(colors.noteColors){item->
+                        items(colors.noteColors(darkTheme = darkTheme)){item->
                             CircleColor(color=item, currentColor=currentColor, onClick = {
-                                noteViewModel.setColor(colors.setColor(item))
+                                noteViewModel.setColor(colors.setColor(item, darkTheme = darkTheme))
                             })
                         }
                     }
@@ -259,7 +261,7 @@ fun NotesView(
     }
 }
 @Composable
-fun CircleColor(onClick: () -> Unit={},color: Color=Color.Transparent,currentColor: Color=Color.Transparent){
+fun CircleColor(onClick: () -> Unit={}, color: Color=Color.Transparent, currentColor: Color=Color.Transparent){
     Box(
         modifier = Modifier.padding(10.dp)
             .size(45.dp)
@@ -386,7 +388,7 @@ fun TopBar(isArchive: Boolean=false,isPin: Boolean=false,onBackClick: () -> Unit
                         onBackClick()
                     }
                 ) {
-                    Image(
+                    Icon(
                         painter = if(isArchive) painterResource(R.drawable.unarchive) else painterResource(R.drawable.archive),
                         contentDescription = stringResource(R.string.archive)
                     )
@@ -422,7 +424,7 @@ fun BottomBar(onColorClick: ()->Unit={},note: Note,onClickMore: ()->Unit={},isTr
             contentAlignment = Alignment.CenterEnd
         ) {
             IconButton(onClick = { onClickMore() }) {
-                Image(
+                Icon(
                     painter = painterResource(id = R.drawable.more_vert),
                     contentDescription = "More"
                 )
